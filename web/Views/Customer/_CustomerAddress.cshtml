@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model web.Models.Customer.CustomerDto
+@inject IViewLocalizer Localizer
+<h2>@Localizer["NewAddress"].Value</h2>
+
+<div class="form-group">
+    @Html.HiddenFor(model => model.Address.AddressId)
+</div>
+
+<div class="form-group">
+    <span class="fa fa-exclamation-triangle fa-2x"></span>
+    @Html.LabelFor(model => model.Address.Street)
+    @Html.TextBoxFor(model => model.Address.Street, null, new { @class = "form-control", placeholder = Localizer["StreetInput"].Value })
+    @Html.ValidationMessageFor(model => model.Address.Street, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    <span class="fa fa-exclamation-triangle fa-2x"></span>
+    @Html.LabelFor(model => model.Address.PostalCode)
+    @Html.TextBoxFor(model => model.Address.PostalCode, null, new { @class = "form-control", placeholder = Localizer["PostalCodeInput"].Value })
+    @Html.ValidationMessageFor(model => model.Address.PostalCode, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    <span class="fa fa-exclamation-triangle fa-2x"></span>
+    @Html.LabelFor(model => model.Address.City)
+    @Html.TextBoxFor(model => model.Address.City, null, new { @class = "form-control", placeholder = Localizer["CityInput"].Value })
+    @Html.ValidationMessageFor(model => model.Address.City, "", new { @class = "text-danger" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Address.PhoneNumbers)
+    @Html.TextAreaFor(model => model.Address.PhoneNumbers, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Address.Emails)
+    @Html.TextAreaFor(model => model.Address.Emails, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Address.Socials)
+    @Html.TextAreaFor(model => model.Address.Socials, new { @class = "form-control" })
+</div>
+
+@*<div class="form-group">
+        <a href="#" role="button" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;@Localizer["AdditionalAddress"]</a>
+        <a href="#" role="button" class="btn btn-default"><i class="fa fa-trash"></i>&nbsp;@Localizer["DeleteAddress"]</a>
+    </div>*@

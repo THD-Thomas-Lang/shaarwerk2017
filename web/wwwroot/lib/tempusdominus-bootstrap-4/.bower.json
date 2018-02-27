@@ -1,0 +1,15 @@
+{
+  "name": "tempusdominus-bootstrap-4",
+  "homepage": "https://github.com/tempusdominus/bootstrap-4",
+  "version": "5.0.0-alpha14",
+  "_release": "5.0.0-alpha14",
+  "_resolution": {
+    "type": "version",
+    "tag": "5.0.0-alpha14",
+    "commit": "086898d8282d65716546c904ec3f96f26922653a"
+  },
+  "_source": "https://github.com/tempusdominus/bootstrap-4.git",
+  "_target": "5.0.0-alpha14",
+  "_originalSource": "tempusdominus-bootstrap-4",
+  "_direct": true
+}

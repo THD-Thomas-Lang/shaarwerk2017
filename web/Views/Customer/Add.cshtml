@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model web.Models.Customer.CustomerDto
+@inject IViewLocalizer Localizer
+@{
+    ViewBag.Title = Localizer["AddCustomer"];
+    Layout = "_Layout";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("Add", "Customer", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    { Html.RenderPartial("_Customer", Model); }
+
+    <hr />
+
+    { Html.RenderPartial("_CustomerAddress", Model); }
+
+    <hr />
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;@Localizer["SaveCustomer"]</button>
+        <a href="@Url.Action("Index")" role="button" class="btn btn-secondary"><i class="fa fa-ban"></i>&nbsp;@Localizer["CancelSaveCustomer"]</a>
+    </div>
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#customerBirthDay").datetimepicker({
+                locale: 'de',
+                format: 'L'
+            });
+        });
+    </script>
+}
